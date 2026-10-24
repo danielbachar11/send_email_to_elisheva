@@ -1,0 +1,46 @@
+# Application (client) ID from Microsoft Entra / Azure Portal -> App registrations
+AZURE_CLIENT_ID=
+# For personal Microsoft accounts (@outlook.com, @hotmail.com, @live.com),
+# keep authority as 'https://login.microsoftonline.com/consumers'
+AZURE_AUTHORITY=https://login.microsoftonline.com/consumers
+
+# Local persistent token cache file for MSAL (preserves refresh token across runs)
+TOKEN_CACHE_FILE=token_cache.bin
+
+# ==============================================================================
+# Google Gemini API Configuration
+# ==============================================================================
+# API key obtained from Google AI Studio (https://aistudio.google.com/)
+GEMINI_API_KEY=
+# GenAI model for summarizing incoming email contents
+GEMINI_MODEL=gemini-3.5-flash-lite
+
+# ==============================================================================
+# Target OneDrive Excel Workbook Configuration
+# ==============================================================================
+# OneDrive Item ID of the target Excel workbook
+ONEDRIVE_FILE_ID=
+
+# Target Worksheet Name inside the workbook
+EXCEL_WORKSHEET_NAME=
+
+# ==============================================================================
+# Email Filtering & Processing Options
+# ==============================================================================
+# Target sender email address to monitor
+TARGET_SENDER_EMAIL=elishevaliber@gmail.com
+
+# Whether to mark the email as Read in Outlook after successfully logging it to Excel
+MARK_AS_READ=true
+
+# Local SQLite database path for idempotency / duplicate prevention
+DB_PATH=processed_emails.db
+
+# ==============================================================================
+# Scheduling Configuration
+# ==============================================================================
+# Interval in hours when running in daemon mode (e.g., 1 for every hour, 0.5 for 30 mins)
+POLL_INTERVAL_HOURS=1
+TARGET_SENDER_EMAIL=danielbachar054@gmail.com
+
+TARGET_RECIPIENT_EMAIL=db0503939419@gmail.com
