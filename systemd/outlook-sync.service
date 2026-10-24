@@ -1,0 +1,15 @@
+[Unit]
+Description=Outlook to OneDrive Excel Automation Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=daniel
+WorkingDirectory=/home/daniel/.gemini/antigravity/scratch/outlook-onedrive-sync
+ExecStart=/home/daniel/.gemini/antigravity/scratch/outlook-onedrive-sync/venv/bin/python main.py --daemon
+Restart=always
+RestartSec=60
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+.env
+token_cache.bin
+processed_emails.db
+sync.log
+__pycache__/
+*.py[cod]
+venv/

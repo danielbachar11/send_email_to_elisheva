@@ -1,0 +1,5 @@
+msal>=1.39.0
+requests>=2.34.0
+google-genai>=2.25.0
+python-dotenv>=1.2.0
+beautifulsoup4>=4.15.0

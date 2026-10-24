@@ -1,6 +1,6 @@
 # Outlook to OneDrive Excel Automation
 
-A robust, scheduled automation in Python that monitors a personal Microsoft Outlook account, filters incoming emails from a specific sender, generates concise 1–2 sentence summaries using Google Gemini (`gemini-3.5-flash-lite`), and appends the structured data directly into an Excel workbook hosted on OneDrive.
+A robust, scheduled automation in Python that monitors a personal Microsoft Outlook account, filters incoming emails from a specific sender and sent emails addressed to a specific recipient, generates concise 1–2 sentence summaries using Google Gemini (`gemini-3.5-flash-lite`), and appends the structured data directly into an Excel workbook hosted on OneDrive.
 
 ---
 
@@ -8,11 +8,13 @@ A robust, scheduled automation in Python that monitors a personal Microsoft Outl
 
 ```
                                       +--------------------------+
-                                      |  Personal Outlook Inbox  |
+                                      | Personal Outlook Mailbox |
                                       +-------------+------------+
                                                     |
-                                                    | Polls unread emails from
-                                                    | elishevaliber@gmail.com
+                                                    | Polls incoming mail from
+                                                    | TARGET_SENDER_EMAIL and
+                                                    | sent mail to
+                                                    | TARGET_RECIPIENT_EMAIL
                                                     v
 +--------------------------+          +-------------+------------+
 |  Local SQLite Database   |<-------->|       SyncRunner         |
@@ -156,6 +158,7 @@ Personal Microsoft accounts require a registered application in Microsoft Entra 
    EXCEL_WORKSHEET_NAME=Sheet1
 
    TARGET_SENDER_EMAIL=elishevaliber@gmail.com
+   TARGET_RECIPIENT_EMAIL=recipient@example.com
    MARK_AS_READ=true
    DB_PATH=processed_emails.db
 
